@@ -1,0 +1,6 @@
+../Core/Src/motorDriver.c:10:15:MotorDriverInit	16	static
+../Core/Src/motorDriver.c:14:6:goForward	16	static
+../Core/Src/motorDriver.c:24:6:fastStop	16	static
+../Core/Src/motorDriver.c:30:6:goLeft	16	static
+../Core/Src/motorDriver.c:34:6:goRight	16	static
+../Core/Src/motorDriver.c:38:6:goBackwards	16	static

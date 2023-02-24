@@ -1,0 +1,2 @@
+../Core/Src/serial.c:15:6:UARTPrintf	108	static
+../Core/Src/serial.c:28:6:UARTPrintln	20	static
