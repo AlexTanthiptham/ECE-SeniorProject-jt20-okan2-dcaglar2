@@ -1,0 +1,5 @@
+../Core/Src/lidar.c:10:5:lidarInit	24	static
+../Core/Src/lidar.c:19:6:waitTillFree	24	static
+../Core/Src/lidar.c:29:5:configLidar	40	static
+../Core/Src/lidar.c:58:5:getStatus	32	static
+../Core/Src/lidar.c:74:5:getDistance	40	static

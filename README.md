@@ -3,14 +3,19 @@
 ## MCU Code
 
 ## Todo
-* Transfer Kinect data via UART
-* Fix Lidar bug so it doesn't die after one measurement
+
+- [ ] Transfer Kinect data via UART
+- [ ] Proper kinect calibration
+- [ ] PID parameter training
+- [x] Fix Lidar bug so it doesn't die after one measurement
 
 ## Working So Far
-* One measurement can be read from the Lidar 
-* Motor driver can go forward and back with variable speed
-* UART can print
-* Can talk to RPi (minimally)
+
+- Motor driver can go forward and back with variable speed
+- UART can print
+- LIDAR can read data
+- Can talk to RPi (minimally)
+- PID controller is initialised
 
 ### UART Print Console Instructions
 

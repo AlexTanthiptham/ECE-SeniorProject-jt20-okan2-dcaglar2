@@ -1,5 +1,7 @@
+"./Core/Src/lidar.o"
 "./Core/Src/main.o"
 "./Core/Src/motorDriver.o"
+"./Core/Src/pid.o"
 "./Core/Src/serial.o"
 "./Core/Src/stm32f7xx_hal_msp.o"
 "./Core/Src/stm32f7xx_it.o"

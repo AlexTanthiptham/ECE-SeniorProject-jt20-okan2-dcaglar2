@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2023 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "motorDriver.h"
 #include "serial.h"
+#include "lidar.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -89,20 +90,20 @@ static void MX_UART4_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
-void ERROR_HAL_CHECK(HAL_StatusTypeDef ret){
-	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-	  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 0);
-	  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
-	  if(ret==HAL_OK){
-		  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 1);
-	  }
-	  if(ret == HAL_BUSY){
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-	  }
-	  if(ret ==HAL_ERROR){
+void ERROR_HAL_CHECK(HAL_StatusTypeDef ret) {
+	HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
+	HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 0);
+	HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 0);
+	if (ret == HAL_OK) {
+		HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 1);
+	}
+	if (ret == HAL_BUSY) {
+		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
+	}
+	if (ret == HAL_ERROR) {
 
-		  HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
-	  }
+		HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, 1);
+	}
 }
 /* USER CODE END PFP */
 
@@ -127,7 +128,6 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  uint8_t LIDAR_ADD  =0x62<<1;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -148,124 +148,58 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
-  #define dutyCycle 1.1
-  MotorDriver * MD= MotorDriverInit();
-  TIM3->CCR1 = (int)(driverSpeed/dutyCycle);
-  TIM4->CCR1 = (int)(driverSpeed/dutyCycle);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  goForward(MD);
+#define dutyCycle 1.1
+	TIM3->CCR1 = (int) (driverSpeed / dutyCycle);
+	TIM4->CCR1 = (int) (driverSpeed / dutyCycle);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+//	goForward(MD);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint8_t cmd[1];
-  #define LIDAR_WRITE_ADD  0xC4
-  #define LIDAR_READ_ADD 0xC5
-  HAL_StatusTypeDef ret;
-  uint8_t data[2];
-  uint8_t distance = 0;
-  UARTClient PC;
-  PC.port = &huart3;
-  UARTClient * PCptr = &PC ;
+	HAL_StatusTypeDef ret;
+	int distance = 0;
+	// UART INIT---------------------
+	UARTClient PC;
+	PC.port = &huart3;
+	UARTClient *PCptr = &PC;
+	//-------------------------------
 
-  UARTPrintln(PCptr,"Starting the code...");
-  //init lidar
-  cmd[0] = 0x04;
-  HAL_I2C_Mem_Write(&hi2c1, LIDAR_ADD ,0x00, 1, cmd,1,100);
-  //config lidar
-	cmd[0]=0x1d;
-	HAL_I2C_Mem_Write(&hi2c1,LIDAR_ADD ,0x02,1,cmd,1,0x1000);
-	cmd[0]=0x08;
-	HAL_I2C_Mem_Write(&hi2c1,LIDAR_ADD ,0x04,1,cmd,1,0x1000);
-	cmd[0]=0x00;
-	HAL_I2C_Mem_Write(&hi2c1,LIDAR_ADD ,0x1c,1,cmd,1,0x1000);
-  //----
-  while (1)
-  {
+	UARTPrintln(PCptr, "Starting the code...");
+	//init lidar
+	LIDAR  lidar;
+	ret = lidarInit(&lidar,&hi2c1);
+	if(ret!=HAL_OK){
+		UARTPrintln(&PC, "lidar FAILED to init");
+		while(1){};
+	}
+	UARTPrintln(&PC, "lidar init and configed");
+	//---------------------
+	//Motor
+	MotorDriver MD;
+    double xdist = 0;
+    double ydist = 0;
+    double xout = 0;
+    double yout = 0.0;
+	PID_TypeDef xctrl;
+	PID_TypeDef yctrl;
+	MotorDriverInit(&MD, &xdist, &ydist, &xout, &yout, &xctrl, &yctrl);
+	goForward(&MD);
+	//----------------
+	while (1) {
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-//	  ret = HAL_UART_Receive(&huart4, data, 20, 10000);
-//	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-//	  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 0);
-//	  if(ret == HAL_TIMEOUT){
-//		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-////		  continue;
-//	  }
-//	  if(ret==HAL_OK){
-//		  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 1);
-//	  }
-//	  ret = HAL_UART_Transmit(&huart4, data, strlen(data), 0xff);
-//	  if(ret==HAL_OK){
-//		  HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, 1);
-//	  }
-//	  if(ret == HAL_TIMEOUT){
-//		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-//	  }
-
-//	  GPIO_PinState userBtn =  HAL_GPIO_ReadPin(USER_Btn_GPIO_Port, USER_Btn_Pin);
-//	  while(!userBtn){
-////		  UARTPrintln(PCptr, );
-//	  };
-	  if(HAL_I2C_IsDeviceReady(&hi2c1, LIDAR_ADD, 2, 500)!=HAL_OK){
-//		  UARTPrintf(PCptr,"disconnected \n\r");
-		  continue;
-	  }
-	  cmd[0] = 0x04;
-	  if(HAL_I2C_Mem_Write(&hi2c1,LIDAR_ADD,0x00,1,cmd,1,100) != HAL_OK){
-		  UARTPrintf(PCptr,"disconnected \n\r");
-		  continue;
-	  }
-	  cmd[0] = 0x8f;
-	  HAL_I2C_Master_Transmit(&hi2c1,LIDAR_ADD,cmd,1,100);
-	  HAL_I2C_Master_Receive(&hi2c1, LIDAR_ADD, data,2,100);
-	  distance =(data[0]<<8)|(data[1]);
-	  UARTPrintf(PCptr,"Distance is:%d cm \n\r",distance);
-	  HAL_Delay(1000);
-//	  UARTPrintln(PCptr,"I2C Try");
-//  	  cmd[0]=0x00;
-//  	  cmd[1]=0x04;
-//  	  ret = HAL_I2C_Master_Transmit(&hi2c1, LIDAR_ADD, cmd, 2, 1000);
-//  	  ERROR_HAL_CHECK(ret);
-//  	  if(ret!=HAL_OK){
-//  		  UARTPrintln(PCptr, "dead");
-//  		  HAL_Delay(100);
-//  		  continue;
-//  	  }
-//  	  cmd[0] = 0x8f;
-//  	  cmd[1]= 0x00;
-//  	  ret = HAL_I2C_Master_Transmit(&hi2c1, LIDAR_READ_ADD, cmd, 1, 1000);
-//  	  ERROR_HAL_CHECK(ret);
-//  	  if(ret!=HAL_OK){
-//  		  UARTPrintln(PCptr, "dead");
-//  		  HAL_Delay(100);
-//  		  continue;
-//  	  }
-////  	  cmd[0] = 0x8f;
-////  	  ret = HAL_I2C_Master_Transmit(&hi2c1,LIDAR_ADD,cmd,1,100);
-////  	  ERROR_HAL_CHECK(ret);
-//  	  data[0] = 0x8f;
-//  	  ret = HAL_I2C_Master_Receive(&hi2c1, LIDAR_READ_ADD, data,2,100);
-//  	  ERROR_HAL_CHECK(ret);
-//  	  if(ret!=HAL_OK){
-//  		  UARTPrintln(PCptr, "dead");
-//  		  HAL_Delay(100);
-//  		  continue;
-//  	  }
-//  	  distance =(data[0]<<8)|(data[1]);
-//  	  UARTPrintf(PCptr,"Distance is:%d cm \n\r",distance);
-//	  HAL_Delay(1000);
-//	  ret = HAL_I2C_IsDeviceReady(&hi2c1, LIDAR_ADD, 3, 1000);
-//	  UARTPrintf(PCptr, "device is %d \n\r",ret);
-//	  while (ret != HAL_OK){
-//		  UARTPrintln(PCptr, "device is not ready\n\r");
-//	  }
-//	  HAL_Delay(3000);
-//	  goBackwards(MD);
-//	  HAL_Delay(3000);
-  }
+		motorDriverUpdate(&MD);
+		UARTPrintf(&PC, "Xctrl out: %d, Yctrl out: %d \n\r",*(MD.xcontOut), *(MD.ycontOut));
+		HAL_Delay(5000);
+//
+//		distance = getDistance(&lidar);
+//		UARTPrintf(PCptr, "Distance is:%d cm \n\r", distance);
+//		HAL_Delay(10);
+	}
   /* USER CODE END 3 */
 }
 
@@ -812,11 +746,10 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
