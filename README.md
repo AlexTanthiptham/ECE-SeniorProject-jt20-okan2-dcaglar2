@@ -23,8 +23,8 @@
   - do we just want the bare minimum? 
   - Should we be safe? -> Use a 9 way connector
 - [x] Connect labels to MCU
-- [ ] Motor output
-- [ ] add jumper
+- [x] Motor output
+- [x] Motor driver IC added 
 ### LIDAR:
 - [x] Add connector for lidar
 - [x] Connect labels to MCU
