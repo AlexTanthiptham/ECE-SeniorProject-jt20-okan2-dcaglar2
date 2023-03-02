@@ -3,17 +3,17 @@
 
 ## To Do:
 ### RPI:
-- [ ] Look into USB-C power delivery protocol for RPI connector
+- [x] Look into USB-C power delivery protocol for RPI connector
   - Maybe we should use just a connector and not usb-c
 - [x] Add UART for pi Connector
 - [x] Connect labels to MCU
 ### Power:
-- [ ] Look into power subsystem required battery connections (Capacitor, resistors)
-- [ ] Add decouple cap for power
-- [ ] Connect labels to MCU
-- [ ] Figure out how to power mcu
-- [ ] Kinect Power Connector
-- [ ] Battery Power Connector
+- [] Look into power subsystem required battery connections (Capacitor, resistors)
+- [x ] Add decouple cap for power
+- [ x] Connect labels to MCU
+- [x] Figure out how to power mcu
+- [x ] Kinect Power Connector
+- [x] Battery Power Connector
 ### Motors:
 - [x] Add symbol for Motor Controller Connector
 - [x] Add labels
@@ -29,12 +29,12 @@
 - [x] Add connector for lidar
 - [x] Connect labels to MCU
 ### Misc:
-- [ ] Find missing KiCAD part symbols/models (Listed on schematic)
-- [ ] How to attach programmer to mcu
+- [x ] Find missing KiCAD part symbols/models (Listed on schematic)
+- [x] How to attach programmer to mcu
   - NRST Pin
 - [x] Programmer connector
 - [ ] Add footprint to all connectors
-- [ ] Add pinout for free pins for debugging(OPT)
+- [ x] Add pinout for free pins for debugging(OPT)
 - [ ] Add LED to check power (OPT)
 
 

@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "symbols")(type "KiCad")(uri "C:/Users/okano/Documents/`University/Spring 2023/Senior Design/ECE-SeniorProject-jt20-okan2-dcaglar2/symbols")(options "")(descr ""))
+  (lib (name "PhoenixContactsTerminalBlocks")(type "KiCad")(uri "C:/Users/okano/Documents/`University/Spring 2023/Senior Design/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/PhoenixContactsTerminalBlocks")(options "")(descr ""))
+)
