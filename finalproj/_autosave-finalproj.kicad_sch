@@ -3260,7 +3260,7 @@
     (uuid ff7bb604-7240-47e5-a02e-89915bceaf2f)
   )
 
-  (text "MCU Decoupling Capacitors: 19x100nF + 1x4.7uF \nConnected parallel between VDD, 3.3V & VSS, GND"
+  (text "MCU Decoupling Capacitors: 20x100nF + 1x4.7uF     (AN4661, page 14)\nConnected parallel between VDD, 3.3V & VSS, GND"
     (at 236.22 27.94 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 4d21e0cf-3224-4384-b91d-0a84dbbf3c09)

@@ -6,10 +6,10 @@
 - [X] Add UART for pi Connector
 - [ ] Connect labels to MCU
 ### Power:
-- [ ] Look into power subsystem required battery connections (Capacitor, resistors)
-- [ ] Add decouple cap for power
+- [X] Look into power subsystem required battery connections (Capacitor, resistors)
+- [X] Add decouple cap for power
 - [ ] Connect labels to MCU
-- [ ] Figure out how to power mcu
+- [X] Figure out how to power mcu
 ### Motors:
 - [X] Add symbol for Motor Controller Connector
 - [ ] Add labels
