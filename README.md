@@ -8,11 +8,11 @@
 - [x] Add UART for pi Connector
 - [x] Connect labels to MCU
 ### Power:
-- [] Look into power subsystem required battery connections (Capacitor, resistors)
-- [x ] Add decouple cap for power
-- [ x] Connect labels to MCU
+- [x] Look into power subsystem required battery connections (Capacitor, resistors)
+- [x] Add decouple cap for power
+- [x] Connect labels to MCU
 - [x] Figure out how to power mcu
-- [x ] Kinect Power Connector
+- [x] Kinect Power Connector
 - [x] Battery Power Connector
 ### Motors:
 - [x] Add symbol for Motor Controller Connector
@@ -25,6 +25,8 @@
 - [x] Connect labels to MCU
 - [x] Motor output
 - [x] Motor driver IC added 
+- [ ] Change the Motor adapter six pins for the encoder 
+- [ ] figure out how to connect encoder to the pcb
 ### LIDAR:
 - [x] Add connector for lidar
 - [x] Connect labels to MCU
@@ -33,9 +35,9 @@
 - [x] How to attach programmer to mcu
   - NRST Pin
 - [x] Programmer connector
-- [ ] Add footprint to all connectors
-- [ x] Add pinout for free pins for debugging(OPT)
+- [x] Add pinout for free pins for debugging(OPT)
 - [ ] Add LED to check power (OPT)
+- [ ] Connect caps closer. 
 
 
 ## Questions:
