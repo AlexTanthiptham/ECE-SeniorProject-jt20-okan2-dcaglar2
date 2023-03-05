@@ -38,6 +38,7 @@
 - [x] Add pinout for free pins for debugging(OPT)
 - [ ] Add LED to check power (OPT)
 - [ ] Connect caps closer. 
+- [ ] Find footprint for motor controller
 
 
 ## Questions:
