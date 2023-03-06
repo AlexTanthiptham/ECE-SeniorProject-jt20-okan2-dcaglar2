@@ -25,8 +25,8 @@
 - [x] Connect labels to MCU
 - [x] Motor output
 - [x] Motor driver IC added 
-- [ ] Change the Motor adapter six pins for the encoder 
-- [ ] figure out how to connect encoder to the pcb
+- [x] Change the Motor adapter six pins for the encoder 
+- [x] figure out how to connect encoder to the pcb
 ### LIDAR:
 - [x] Add connector for lidar
 - [x] Connect labels to MCU
@@ -37,8 +37,11 @@
 - [x] Programmer connector
 - [x] Add pinout for free pins for debugging(OPT)
 - [ ] Add LED to check power (OPT)
-- [ ] Connect caps closer. 
-- [ ] Find footprint for motor controller
+- [x] Connect caps closer. 
+- [x] Find footprint for motor controller
+- [ ] Check breakout sizing with the pcb
+- [ ] Check board connections and power pins
+- [ ] Fix remaining warnings
 
 
 ## Questions:
