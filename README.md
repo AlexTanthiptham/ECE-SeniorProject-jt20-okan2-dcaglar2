@@ -1,9 +1,9 @@
 # ECE445 Final Project KiCAD
 ## Table of Contents
-- [ ][PCBWAY-Checklist](#pcbway-checklist)
-  - [ ][Schematic](#schematic)
-  - [ ][Components](#components)
-  - [ ][Printed Circuit Board](#printed-circuit-board)
+- [ ] [PCBWAY-Checklist](#pcbway-checklist)
+  - [ ] [Schematic](#schematic)
+  - [ ] [Components](#components)
+  - [ ] [Printed Circuit Board](#printed-circuit-board)
 - [To Do](#to-do)
   - [x][RPI](#rpi)
   - [x][Power](#power)
@@ -16,10 +16,10 @@ Before sending your PCB design to production, make sure to go through this check
 
 ### Schematic
 
-- [ ] How will you program the microcontroller? Does it have enough memory? Is it fast enough? Does the default bootloader let you program?
-- [ ] Are any components being overvolted? What is the maximum operating voltage of your microcontroller?
-- [ ] What voltage are your logic signals? Are your logic signals push/pull or open collector/drain? Do you have pull up/down resistors where needed?
-- [ ] Are bypass capacitors placed properly? (watch a video tutorial if needed)
+- [x] How will you program the microcontroller? Does it have enough memory? Is it fast enough? Does the default bootloader let you program?
+- [x] Are any components being overvolted? What is the maximum operating voltage of your microcontroller?
+- [x] What voltage are your logic signals? Are your logic signals push/pull or open collector/drain? Do you have pull up/down resistors where needed?
+- [x] Are bypass capacitors placed properly? (watch a video tutorial if needed)
 - [ ] Make your circuit easy to debug! Have you placed test points on key nodes? (Add a part > search “test point”. Edit symbol properties and select a footprint. Search “test point” in the footprint editor)
 - [ ] If you are apprehensive about a chip not working, you can break out the pins into a row of headers (Search “Conn” in “Choose Symbol” window)
 - [ ] Do you have a low-pass filter in front of any ADCs you are using? Even if you aren’t sure you need one, make one anyway. You can bridge over the resistor and remove the capacitor if you change your mind later.
