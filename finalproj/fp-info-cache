@@ -1,4 +1,4 @@
-21458228787702491
+21464941430526472
 1985195
 PHOENIX_1985195
 
@@ -60395,6 +60395,34 @@ TO254P1054X470X1955-3
 0
 3
 3
+MCU_SOCKETS
+MCU1_SOCKET
+Through hole straight socket strip, 2x18, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x18 2.54mm double row
+0
+36
+36
+MCU_SOCKETS
+MCU2_SOCKETS
+Through hole straight socket strip, 2x18, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x18 2.54mm double row
+0
+36
+36
+MCU_SOCKETS
+MCU3_SOCKETS
+Through hole straight socket strip, 2x18, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x18 2.54mm double row
+0
+36
+36
+MCU_SOCKETS
+MCU4_SOCKETS
+Through hole straight socket strip, 2x18, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x18 2.54mm double row
+0
+36
+36
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
