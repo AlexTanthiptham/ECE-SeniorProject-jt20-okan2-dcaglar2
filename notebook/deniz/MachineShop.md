@@ -9,3 +9,8 @@
 - Waiting on all mechanical parts to arrive to drop everything by the machine shop 
 
 - Talked to the machine shop to get a quote for all construction processes. They quoted 8 hrs/day for 4 days of construction time for our robot.
+
+- The replacement motors arrived and got dropped off at the machine shop
+
+- Picked up the motors from the machine shop, the lower layer of the robot is finished, will add kinect and railings ontop.
+
