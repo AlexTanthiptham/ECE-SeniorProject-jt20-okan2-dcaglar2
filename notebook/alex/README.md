@@ -66,17 +66,17 @@ Finalized LM1085-ADJ verification:
 
 Finalized LM1085-ADJ R2 resistances:
 
-V_out ┃ R_2
-──────╂──────────
-3.3 V ┃ 220  Ohms
-5 V   ┃ 400  Ohms
-12 V  ┃ 1120 Ohms
+|V_out | R_2       |
+|------|-----------|
+|3.3 V | 220  Ohms |
+|5 V   | 400  Ohms |
+|12 V  | 1120 Ohms |
 
 Identified design issue with main board design - MCU4 and MCU3 sockets are misaligned with breakout board configuration. Relative to the position of the MCU, these sockets are wired such that odd MCU pins are the outward facing row and even MCU pins are the inward facing row. This arangement is contrary to the breakout board and sockets MCU1 and MCU2 on the mainboard whereby odd pins are inward and even pins outward. 
 
 Below is a simplified depiction of the misalignment. O representing odd pins and E representing even pins.
 
-
+```
         Main board       
            MCU4          
           O O O
@@ -98,7 +98,7 @@ MCU1  E O       O E   MCU3
           O O O
           E E E
            MCU2
-
+```
 
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
