@@ -50,15 +50,54 @@ Began soldering of PCB mainboard components. Assembled non-PCB power supply comp
 # Entry 8
 Date: Mar 29, 2023
 
-Verified LM1085 functionality, calculating required attached resistances to obtain the desired output voltage. Generally, measured output voltages trended lower than calculated values requiring adjustment of resistances to obtain the desired values. However, calculated resistance for 12V output unexpectedly resulted in an 18V output. Currently pending further examination of datasheet to identify this deviance from device specifications and trial/error of different resistances for a finalized value.
+Verified LM1085-ADJ functionality, calculating required attached resistances to obtain the desired output voltage. Generally, measured output voltages trended lower than calculated values requiring adjustment of resistances to obtain the desired values. However, calculated resistance for 12V output unexpectedly resulted in an 18V output. Currently pending further examination of datasheet to identify this deviance from device specifications and trial/error of different resistances for a finalized value.
 
-Finalized resistances: 200 Ohms for 3.3V output, 400 Ohms for 5V output, pending for 12V output.
+Current resistances: 200 Ohms for 3.3V output, 400 Ohms for 5V output, pending for 12V output.
 
 Further assembled PCB mainboard components, soldering on various sockets and connectors arranged in a manner which allows for all components to be accessed without colliding with breakout board. Identified and fixed a LM1085 soldered in the wrong orientation during Mar 29.
 
 
 # Entry 9
-Date: ____, 2023
+Date: Apr 1, 2023
+
+Finalized LM1085-ADJ verification: 
+
+200 Ohms for 3.3V output, 400 Ohms for 5V output, pending for 12V output.
+
+Finalized LM1085-ADJ R2 resistances:
+
+V_out ┃ R_2
+──────╂──────────
+3.3 V ┃ 220  Ohms
+5 V   ┃ 400  Ohms
+12 V  ┃ 1120 Ohms
+
+Identified design issue with main board design - MCU4 and MCU3 sockets are misaligned with breakout board configuration. Relative to the position of the MCU, these sockets are wired such that odd MCU pins are the outward facing row and even MCU pins are the inward facing row. This arangement is contrary to the breakout board and sockets MCU1 and MCU2 on the mainboard whereby odd pins are inward and even pins outward. 
+
+Below is a simplified depiction of the misalignment. O representing odd pins and E representing even pins.
+
+
+        Main board       
+           MCU4          
+          O O O
+          E E E
+      E O       E O
+MCU1  E O       E O   MCU3
+      E O       E O
+          O O O
+          E E E
+           MCU2
+
+      Breakout board       
+           MCU4          
+          E E E
+          O O O
+      E O       O E
+MCU1  E O       O E   MCU3
+      E O       O E
+          O O O
+          E E E
+           MCU2
 
 
 # Attribution
