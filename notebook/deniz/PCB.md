@@ -3,3 +3,5 @@
 - Using L298N with two motors
 - Desoldered the H-bridge IC from the board it came with and soldered onto main board.
 - Changed the voltage regulator that we were using to an adjustable one
+
+- Redrew connections on main board due to redesign. Thermal and fill errors present
