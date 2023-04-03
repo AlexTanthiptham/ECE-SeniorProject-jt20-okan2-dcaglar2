@@ -3,7 +3,7 @@
   (lib (name "symbols")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/symbols")(options "")(descr ""))
   (lib (name "PhoenixContactsTerminalBlocks")(type "KiCad")(uri "C:/Users/okano/Documents/`University/Spring 2023/Senior Design/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/PhoenixContactsTerminalBlocks")(options "")(descr ""))
   (lib (name "1985195")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/1985195")(options "")(descr ""))
-  (lib (name "LM1085IT-5.0")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/LM1085IT-5.0")(options "")(descr ""))
+  (lib (name "LM1085IT-5.0")(type "KiCad")(uri "C:/Users/okano/Documents/`University/Spring 2023/Senior Design/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/LM1085IT-5.0")(options "")(descr ""))
   (lib (name "XT60_YELLOW")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/XT60_YELLOW")(options "")(descr ""))
   (lib (name "logos")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/logos")(options "")(descr ""))
   (lib (name "MCU_SOCKETS")(type "KiCad")(uri "/home/deniz/Desktop/ece445/ECE-SeniorProject-jt20-okan2-dcaglar2/footprints/FinalProjFootPrints/MCU_SOCKETS.pretty")(options "")(descr ""))
