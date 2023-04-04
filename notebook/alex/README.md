@@ -100,6 +100,27 @@ MCU1  E O       O E   MCU3
            MCU2
 ```
 
+# Entry 10
+Date: Apr 3, 2023
+
+Minor Progress in Apr 2, 2023: Identified major design flaws during the course of attempting to debug inability to programming the MCU unit. This issue remains unresolved.
+
+Identified Design Issues:
+- (Breakout) VDD headers not connected to MCU VDD pins. Instead, MCU VDD pins are only connected to VDD_Target port of the programmer connector. 
+- (Breakout) BOOT1, VDDUSB, VDDA, VREF+, VCAP_1 and VCAP_2 are not correctly connected, resulting in MCU start up issues.
+- (Main) Breakout board intersects with voltage regulators, blocking connection of sockets to the board. 
+
+
+In this session, the mainboard schematic was revised to address some design issues identified on Apr 2, 2023. In-depth review of STM32F423ZHT data sheet, application note and reference manual were made to seek a solution for inability to program MCU. Chiefly, the following ports were identified as being insufficiently connected: BOOT1, VDDUSB, VDDA, VREF+, VCAP_1 and VCAP_2.
+
+As MCU specific components, these would be placed on the breakout board as per previous group design decisions. However,  due to expense of MCU units and risk of damage from de-soldering the unit, errors on the breakout board can only be resolved through adhoc means rather than PCB redesign and reprint. As such, these components are instead placed upon the main board and connected to the corresponding socket pins instead. Notable amongst these components is the case of VDDA. Owning to its need to be connected to the debouncing capacitor array to which other VDD pins (on breakout) are connected to, an additional manually soldered wire connetion between the mainboard and breakout board may be required to obtains its recommended wiring configuration.
+
+Pending Main Board Tasks
+- Realignment of sockets with breakout board header dimensions to adequet tolerances
+- Rearrangement of components to resolve ECR warnings and errors
+- Footprint selection & purchasing of newly added components 
+
+
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
 https://gitlab.engr.illinois.edu/ece445/example-project
