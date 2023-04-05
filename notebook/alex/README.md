@@ -120,6 +120,14 @@ Pending Main Board Tasks
 - Rearrangement of components to resolve ECR warnings and errors
 - Footprint selection & purchasing of newly added components 
 
+# Entry 11
+Date: Apr 5, 2023
+
+Major design change. Began and completed revised KiCAD mainboard design schematic.
+
+Change from STM32F423ZHT6 to STM32F401RBT6TR microcontroller. As our team must purchase all materials for the project out of pocket (due to My.ECE extreme unspecified issues), the continued purchase of STM32F423 in sufficient numbers to complete debugging and design revisions for this project has been deemed too great. 
+
+Given the signficantly lower cost of STM32F401 microcontroller, the use of a breakout board was determined to no longer be economical. As such, in addition to software and hardware changes necessary in migrating from a 144-pin MCU to a 64-pin MCU, all breakout board components are also to be migrated over to the main board.
 
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
