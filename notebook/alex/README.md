@@ -129,6 +129,14 @@ Change from STM32F423ZHT6 to STM32F401RBT6TR microcontroller. As our team must p
 
 Given the signficantly lower cost of STM32F401 microcontroller, the use of a breakout board was determined to no longer be economical. As such, in addition to software and hardware changes necessary in migrating from a 144-pin MCU to a 64-pin MCU, all breakout board components are also to be migrated over to the main board.
 
+Progress Summary:
+- Integrated breakout board components onto mainboard
+- Removed breakout board sockets from mainboard
+- Changed microcontrollers from STM32F423ZHT6 to STM32F401RBT6TR
+- Added debugging features to main board 
+     - Integrated switches for BOOT0 and BOOT1 values
+     - GPIO ports for external 3.3, 5, 12V power supply
+
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
 https://gitlab.engr.illinois.edu/ece445/example-project
