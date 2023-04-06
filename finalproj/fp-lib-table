@@ -13,4 +13,7 @@
   (lib (name "MountingHole")(type "KiCad")(uri "${KICAD7_FOOTPRINT_DIR}/MountingHole.pretty")(options "")(descr ""))
   (lib (name "Package_TO_SOT_THT")(type "KiCad")(uri "${KICAD7_FOOTPRINT_DIR}/Package_TO_SOT_THT.pretty")(options "")(descr ""))
   (lib (name "TerminalBlock_Phoenix")(type "KiCad")(uri "${KICAD7_FOOTPRINT_DIR}/TerminalBlock_Phoenix.pretty")(options "")(descr ""))
+  (lib (name "ABLS-25.000MHZ-B2F-T")(type "KiCad")(uri "/Users/Jack/Desktop/UIUC/2023-1Spring/ECE445/finalproj-git/pcb-git/footprints/ABLS-25.000MHZ-B2F-T")(options "")(descr ""))
+  (lib (name "Switch_E-Switch_EG1206A")(type "KiCad")(uri "/Users/Jack/Desktop/UIUC/2023-1Spring/ECE445/finalproj-git/pcb-git/footprints/Switch_E-Switch_EG1206A")(options "")(descr ""))
+  (lib (name "EG-1206A")(type "KiCad")(uri "/Users/Jack/Desktop/UIUC/2023-1Spring/ECE445/finalproj-git/pcb-git/footprints/EG-1206A")(options "")(descr ""))
 )
