@@ -1,0 +1,9 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"J8";"PinHeader_1x06_P2.54mm_Vertical";1;"Programmer_Conn";;;
+2;"SW1";"SW_PUSH_6mm";1;"RESET_SW";;;
+3;"U1";"LQFP-144_20x20mm_P0.5mm";1;"STM32F767ZITx";;;
+4;"C21,C16,C19,C9,C4,C11,C12,C14,C20,C6,C18,C7,C5,C15,C8,C3,C10,C17,C22";"C_1812_4532Metric_Pad1.57x3.40mm_HandSolder";19;"100nF";;;
+5;"R1";"R_2816_7142Metric_Pad3.20x4.45mm_HandSolder";1;"10k";;;
+6;"J3,J4,J2,J1";"PinHeader_2x18_P2.54mm_Vertical";4;"Conn_02x18_Odd_Even";;;
+7;"C23";"C_1812_4532Metric_Pad1.57x3.40mm_HandSolder";1;"0.1uF";;;
+8;"C13";"C_1812_4532Metric_Pad1.57x3.40mm_HandSolder";1;"4.7uF";;;
