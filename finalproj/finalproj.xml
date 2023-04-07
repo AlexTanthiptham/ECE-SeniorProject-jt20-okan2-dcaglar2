@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\okano\Documents\`University\Spring 2023\Senior Design\ECE-SeniorProject-jt20-okan2-dcaglar2\finalproj\finalproj.kicad_sch</source>
-    <date>4/6/2023 3:46:05 AM</date>
+    <date>4/7/2023 4:23:30 AM</date>
     <tool>Eeschema (7.0.0)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -24,6 +24,28 @@
     </sheet>
   </design>
   <components>
+    <comp ref="BOOT0">
+      <value>SW_DPDT_x2</value>
+      <footprint>Switch_E-Switch_EG1206A:SLIDE-SWITCH</footprint>
+      <libsource lib="Switch" part="SW_DPDT_x2" description="Switch, dual pole double throw, separate symbols"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="finalproj.kicad_sch"/>
+      <property name="ki_description" value="Switch, dual pole double throw, separate symbols"/>
+      <property name="ki_keywords" value="switch dual-pole double-throw DPDT spdt ON-ON"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>89edeb19-b8d5-4707-bb0e-a7cbdaf3302a</tstamps>
+    </comp>
+    <comp ref="BOOT1">
+      <value>SW_DPDT_x2</value>
+      <footprint>Switch_E-Switch_EG1206A:SLIDE-SWITCH</footprint>
+      <libsource lib="Switch" part="SW_DPDT_x2" description="Switch, dual pole double throw, separate symbols"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="finalproj.kicad_sch"/>
+      <property name="ki_description" value="Switch, dual pole double throw, separate symbols"/>
+      <property name="ki_keywords" value="switch dual-pole double-throw DPDT spdt ON-ON"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7792b494-e854-46b2-988c-ee337803fc28</tstamps>
+    </comp>
     <comp ref="C1">
       <value>100 nF</value>
       <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
@@ -810,28 +832,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a1b48022-e48d-42d1-aa2e-96b723d405e2</tstamps>
     </comp>
-    <comp ref="SW1">
-      <value>SW_DPDT_x2</value>
-      <footprint>EG-1206A:SLIDE-SWITCH</footprint>
-      <libsource lib="Switch" part="SW_DPDT_x2" description="Switch, dual pole double throw, separate symbols"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="finalproj.kicad_sch"/>
-      <property name="ki_description" value="Switch, dual pole double throw, separate symbols"/>
-      <property name="ki_keywords" value="switch dual-pole double-throw DPDT spdt ON-ON"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>7792b494-e854-46b2-988c-ee337803fc28</tstamps>
-    </comp>
-    <comp ref="SW2">
-      <value>SW_DPDT_x2</value>
-      <footprint>EG-1206A:SLIDE-SWITCH</footprint>
-      <libsource lib="Switch" part="SW_DPDT_x2" description="Switch, dual pole double throw, separate symbols"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="finalproj.kicad_sch"/>
-      <property name="ki_description" value="Switch, dual pole double throw, separate symbols"/>
-      <property name="ki_keywords" value="switch dual-pole double-throw DPDT spdt ON-ON"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>89edeb19-b8d5-4707-bb0e-a7cbdaf3302a</tstamps>
-    </comp>
     <comp ref="SW3">
       <value>SW_Push</value>
       <footprint>Button_Switch_THT:SW_PUSH_6mm</footprint>
@@ -1451,7 +1451,7 @@
       <uri>C:\Program Files\KiCad\7.0\share\kicad\symbols\/Switch.kicad_sym</uri>
     </library>
     <library logical="finalProj">
-      <uri>C:/Users/okano/Documents/`University/Spring 2023/Senior Design/ECE-SeniorProject-jt20-okan2-dcaglar2/symbols/finalProj.kicad_sym</uri>
+      <uri>C:\Users\okano\Documents\`University\Spring 2023\Senior Design\ECE-SeniorProject-jt20-okan2-dcaglar2\finalproj/../symbols/finalProj.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -1475,6 +1475,8 @@
       <node ref="U4" pin="3" pinfunction="VI" pintype="power_in"/>
     </net>
     <net code="3" name="EXT_3.3">
+      <node ref="BOOT0" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="BOOT1" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="C14" pin="2" pintype="passive"/>
       <node ref="C15" pin="2" pintype="passive"/>
       <node ref="C16" pin="2" pintype="passive"/>
@@ -1491,8 +1493,6 @@
       <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="R5" pin="1" pintype="passive"/>
-      <node ref="SW1" pin="1" pinfunction="A" pintype="passive"/>
-      <node ref="SW2" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="U4" pin="2" pinfunction="VO" pintype="power_out"/>
       <node ref="U7" pin="19" pinfunction="VDD" pintype="power_in"/>
       <node ref="U7" pin="32" pinfunction="VDD" pintype="power_in"/>
@@ -1532,6 +1532,8 @@
       <node ref="U5" pin="9" pinfunction="Vss" pintype="power_in"/>
     </net>
     <net code="6" name="EXT_GND">
+      <node ref="BOOT0" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="BOOT1" pin="3" pinfunction="C" pintype="passive"/>
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="C15" pin="1" pintype="passive"/>
@@ -1583,12 +1585,10 @@
       <node ref="POW1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="POW2" pin="2" pinfunction="GND" pintype="passive"/>
       <node ref="POW3" pin="2" pinfunction="GND" pintype="passive"/>
-      <node ref="RV1" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV2" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV3" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="RV4" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="SW1" pin="3" pinfunction="C" pintype="passive"/>
-      <node ref="SW2" pin="3" pinfunction="C" pintype="passive"/>
+      <node ref="RV1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="RV2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="RV3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="RV4" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5" pin="1" pinfunction="SENSE_A" pintype="power_in"/>
       <node ref="U5" pin="15" pinfunction="SENSE_B" pintype="power_in"/>
@@ -1673,52 +1673,52 @@
       <node ref="SW3" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U7" pin="7" pinfunction="NRST" pintype="input"/>
     </net>
-    <net code="24" name="Net-(C40-Pad2)">
+    <net code="24" name="Net-(BOOT0A-B)">
+      <node ref="BOOT0" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
+    </net>
+    <net code="25" name="Net-(BOOT1A-B)">
+      <node ref="BOOT1" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
+    </net>
+    <net code="26" name="Net-(C40-Pad2)">
       <node ref="C40" pin="2" pintype="passive"/>
       <node ref="R6" pin="1" pintype="passive"/>
       <node ref="Y1" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="25" name="Net-(C41-Pad2)">
+    <net code="27" name="Net-(C41-Pad2)">
       <node ref="C41" pin="2" pintype="passive"/>
       <node ref="R8" pin="2" pintype="passive"/>
       <node ref="Y1" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="26" name="Net-(C42-Pad2)">
+    <net code="28" name="Net-(C42-Pad2)">
       <node ref="C42" pin="2" pintype="passive"/>
       <node ref="R10" pin="1" pintype="passive"/>
       <node ref="Y2" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="27" name="Net-(C43-Pad2)">
+    <net code="29" name="Net-(C43-Pad2)">
       <node ref="C43" pin="2" pintype="passive"/>
       <node ref="R9" pin="2" pintype="passive"/>
       <node ref="Y2" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="28" name="Net-(SW1A-B)">
-      <node ref="R4" pin="2" pintype="passive"/>
-      <node ref="SW1" pin="2" pinfunction="B" pintype="passive"/>
-    </net>
-    <net code="29" name="Net-(SW2A-B)">
-      <node ref="R2" pin="1" pintype="passive"/>
-      <node ref="SW2" pin="2" pinfunction="B" pintype="passive"/>
-    </net>
     <net code="30" name="Net-(U1-GND)">
       <node ref="R7" pin="2" pintype="passive"/>
-      <node ref="RV4" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV4" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="31" name="Net-(U2-GND)">
       <node ref="R3" pin="2" pintype="passive"/>
-      <node ref="RV2" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U2" pin="1" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="32" name="Net-(U3-GND)">
       <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="RV1" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U3" pin="1" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="33" name="Net-(U4-GND)">
       <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="RV3" pin="3" pinfunction="3" pintype="passive"/>
+      <node ref="RV3" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U4" pin="1" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="34" name="Net-(U7-BOOT0)">
@@ -1795,17 +1795,17 @@
     <net code="52" name="unconnected-(J5-MODE-Pad5)">
       <node ref="J5" pin="5" pinfunction="MODE" pintype="passive"/>
     </net>
-    <net code="53" name="unconnected-(RV1-Pad2)">
-      <node ref="RV1" pin="2" pinfunction="2" pintype="passive"/>
+    <net code="53" name="unconnected-(RV1-Pad3)">
+      <node ref="RV1" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="54" name="unconnected-(RV2-Pad2)">
-      <node ref="RV2" pin="2" pinfunction="2" pintype="passive"/>
+    <net code="54" name="unconnected-(RV2-Pad3)">
+      <node ref="RV2" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="55" name="unconnected-(RV3-Pad2)">
-      <node ref="RV3" pin="2" pinfunction="2" pintype="passive"/>
+    <net code="55" name="unconnected-(RV3-Pad3)">
+      <node ref="RV3" pin="3" pinfunction="3" pintype="passive"/>
     </net>
-    <net code="56" name="unconnected-(RV4-Pad2)">
-      <node ref="RV4" pin="2" pinfunction="2" pintype="passive"/>
+    <net code="56" name="unconnected-(RV4-Pad3)">
+      <node ref="RV4" pin="3" pinfunction="3" pintype="passive"/>
     </net>
     <net code="57" name="unconnected-(U7-PA3-Pad17)">
       <node ref="U7" pin="17" pinfunction="PA3" pintype="bidirectional"/>
