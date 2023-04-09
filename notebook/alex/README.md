@@ -137,6 +137,20 @@ Progress Summary:
      - Integrated switches for BOOT0 and BOOT1 values
      - GPIO ports for external 3.3, 5, 12V power supply
 
+
+# Entry 12
+Date: Apr 7, 2023
+
+Regarding the circumstances surrounding our difficulties in producing parts through myECE, we have discussed with Professor Gruev and obtained permission to use pre-assembled PCBs to make up for the little time we have left to complete the project.
+
+Performed final schematic and PCB debugging prior to ordering via JCL.
+
+Changes:
+- [Design Decision] Initially, mainboard PCB was to be in black to maximized heat dissipation. However, given time constraints this requirement has been dropped due to the additional days of processing time.
+- Fixed incorrect load capacitance for oscillator crystals
+- Fixed VRef, VBat bugs
+- Added additional pull down resistors and decoupling capacitors to motor controller IC
+
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
 https://gitlab.engr.illinois.edu/ece445/example-project
