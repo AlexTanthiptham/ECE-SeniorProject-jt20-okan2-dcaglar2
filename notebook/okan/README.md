@@ -1,5 +1,16 @@
 # Okan Worklog
 ## 4/16/2023
+### Goals:
+- We aimed to setup new buck converters
+- Power on the entire board with thermal efficiency
+### My Attempts:
+- Connected buck converters to the main power line to power 5V and rest of the LMs. 
+- Main 18V is dropped to 5V and 14V respectively.
+### Issues Found:
+-  None
+### Achievements:
+- Buck converters and LM voltage regulators do not heat up while providing voltage.
+- Managed the provide 12V and 5V to the systems. 
 ## 4/14/2023
 ### Goals:
 - Find the issue that fried the devboard
@@ -61,5 +72,31 @@
 - Created new QR code with sha256
 - Improved calibration for the Kinect
 
+## 4/10/2023- 4/14/2023
+### Goals:
+- Edited pcb design and ordering.
+- Building electronic connections on the robot
+- Trying to power the new motors.
+### Achievements:
+- Ordered new pcbs with new MCU.
+- Robot electronic connections are finished
 
-## Old ones will be added later...
+## 3/30/2023- 4/9/2023
+### Goals:
+- Try the new pcb
+- Try the breakout board
+### My Attempts:
+- Soldering 
+- Powering the breakout board
+### Issues Found:
+- Breakout board not powering
+- Voltage regulators not working
+## 3/25/2023 - 3/27/2023 
+### Goals:
+- Picked up robot from machine shop
+- Finding new battery 
+### My Attempts:
+- Ordering 6V battery to take our input to 18V.
+## PCB Design...
+## Prototype ... 
+## Machine shop talks...
