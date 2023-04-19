@@ -151,6 +151,33 @@ Changes:
 - Fixed VRef, VBat bugs
 - Added additional pull down resistors and decoupling capacitors to motor controller IC
 
+# Entry 13
+Date: Apr 12, 2023
+- Able to successfully power and program devboard from battery power supply, devboard burning
+- Work paused until new devboard / PCB arrives
+- Design Decision: Added fuses rated to devboard maximum input current to power supply circuit to prevent similar future incidents
+
+# Entry 14
+Date: Apr 14, 2023
+- Began assembly of newly arrived PCBs
+
+
+# Entry 15
+Date: Apr 16, 2023
+- Began breadboard testing of LM1085 with dummy loads to determine the cause of original devboard fire. Observed accelerating increase in output current via multimeter with prolonged use
+- Identified to be a result of heating with LM1085 exceeding its maximum temperature with prolonged use, attempted testing various heatsinks 
+- Design Decision: Linear regulators deemed too inefficient for 18->12V step-down. Required heat dissapation for the power consumed by the unit impractical to be resolved by heatsinks or fans. Instead, battery power supply will be stepped down to 14V and 5V by separate Buck converter circuits before being passed through LM1085s to reduce the voltage stepdown through the units. Due to high current requirements, 5V components will be supplied directly by the Buck converter via the debug GPIO pins with no usage of LM1085.
+
+# Entry 16
+Date: Apr 17, 2023
+- Assembly of Buck Converters to powersupply cables.
+- Testing of motors using PCB MCU and battery power supply. MCU burnt during testing, due to unknown cause. Hypothesized to be due to shorting between 12V power supply and input PWM (connected directly to MCU) pins of the H-bridge by multimeter probe.
+
+# Entry 17
+Date: Apr 18, 2023
+- Salvage of useable parts from burnt PCB, reassembly of new MCU
+- Testing of robot with battery powersupply and PCB MCU w/ toolbox weight load. Recorded speeds of ~0.7 m/s exceeds highlevel requirement of 0.5 m/s.
+
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
 https://gitlab.engr.illinois.edu/ece445/example-project
