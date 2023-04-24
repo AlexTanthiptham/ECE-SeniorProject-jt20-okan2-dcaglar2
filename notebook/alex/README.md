@@ -178,6 +178,31 @@ Date: Apr 18, 2023
 - Salvage of useable parts from burnt PCB, reassembly of new MCU
 - Testing of robot with battery powersupply and PCB MCU w/ toolbox weight load. Recorded speeds of ~0.7 m/s exceeds highlevel requirement of 0.5 m/s.
 
+# Entry 18
+Date: Apr 19, 2023
+- Continued assembly and testing of robot
+
+# Entry 18
+Date: Apr 20, 2023
+- Continued assembly and testing of robot
+- Preparation of RPI, Kinect camera for usage with robot power supply
+- Arrangement and preparation of project components for permanent mounting, keeping in mind wire management
+
+# Entry 19
+Date: Apr 21, 2023
+- Mock demo, resulted in circuit burning
+- Began investigation of possible errors and reassembly of new PCB
+- Salvage of limited supply part sin good conditions from burnt board
+- Drafted Team Contract Fulfillment report
+
+
+# Entry 19
+Date: Apr 22, 2023
+- Additional wire management to prevent potential shorting and burning
+- Heat molding of wires to fit layout of robot using heat shrink tubing's thermal properties
+- Finalized assembly of all separate subsystems (MCU, Motor, Power Supply, RPI, Kinect) to robot
+- Successful testing of all subsystems with onboard power supply
+
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
 https://gitlab.engr.illinois.edu/ece445/example-project
