@@ -16,11 +16,11 @@ class SerialCOM:
         bytesize=serial.EIGHTBITS,
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE)
-    def sendData(self,data:int):
+    def sendData(self,data:str):
         try:
             # data = bytes(str(data),encoding="utf8")
             # print(list(data),)
-            print(f"you wrote: {data} nbytes: {self.arduino.write(serial.to_bytes([data]))}")
+            print(f"you wrote: {data} nbytes: {self.arduino.write(data)}")
             self.arduino.flush()
         except ValueError:
             pass
@@ -39,13 +39,13 @@ class SerialCOM:
                 text += str(data,encoding="utf8")
             except UnicodeDecodeError:
                 print(data)
-
-arduino = SerialCOM(timeout=None)
-text= ""
-ihatelife=0
-while ihatelife<10:
-    # num = input("Enter a number: ") # Taking input from user
-    #arduino.sendData(int(ihatelife))
-    arduino.readData()
-    ihatelife+=1
-    time.sleep(2)
+if __name__ == "__main__":
+	arduino = SerialCOM(timeout=None)
+	text= ""
+	ihatelife=0
+	while ihatelife<10:
+	    # num = input("Enter a number: ") # Taking input from user
+	    #arduino.sendData(int(ihatelife))
+	    arduino.readData()
+	    ihatelife+=1
+	    time.sleep(2)
