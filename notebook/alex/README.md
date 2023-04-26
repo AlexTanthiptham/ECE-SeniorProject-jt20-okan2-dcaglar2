@@ -196,12 +196,26 @@ Date: Apr 21, 2023
 - Drafted Team Contract Fulfillment report
 
 
-# Entry 19
+# Entry 20
 Date: Apr 22, 2023
 - Additional wire management to prevent potential shorting and burning
 - Heat molding of wires to fit layout of robot using heat shrink tubing's thermal properties
 - Finalized assembly of all separate subsystems (MCU, Motor, Power Supply, RPI, Kinect) to robot
 - Successful testing of all subsystems with onboard power supply
+
+
+# Entry 21
+Date: Apr 24, 2023
+- Finaizing wire arrangement and assembly
+- Arranged board to maximize safety, insulating exposed cables and securing loose wires to prevent detachment and shorting
+- Design Decision: Repurposed stepper motor power ports for 12V power supply to Kinect and cooling fans. Entirely replace usage of breadboard and GPIO pins, reducing risk of loose wires and shorting
+
+# Entry 22
+Date: Apr 25, 2023
+- Debugging PID hyperparameters
+- Assist in verifying hardware functionality during any debugging sessions that arose
+- Faciliated impromptu battery charging using lab power supplies
+
 
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
