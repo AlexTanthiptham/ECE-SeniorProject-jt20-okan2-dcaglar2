@@ -1,0 +1,5 @@
+../Core/Src/encoder.c:14:6:initEncoder	40	static
+../Core/Src/encoder.c:34:5:getCounter	16	static
+../Core/Src/encoder.c:39:7:getVelocity	32	static
+../Core/Src/encoder.c:79:7:getDistance	48	static
+../Core/Src/encoder.c:102:6:Encoder_IT_Handler	40	static,ignoring_inline_asm

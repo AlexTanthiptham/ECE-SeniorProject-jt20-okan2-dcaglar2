@@ -1,0 +1,12 @@
+../Core/Src/motorDriver.c:13:6:MotorDriverInit	32	static
+../Core/Src/motorDriver.c:41:6:initPIDController	24	static
+../Core/Src/motorDriver.c:49:5:motorDriverUpdate	24	static
+../Core/Src/motorDriver.c:55:6:goBackwards	16	static
+../Core/Src/motorDriver.c:65:6:fastStop	16	static
+../Core/Src/motorDriver.c:71:6:gradualSetIndividualSpeedRPM	32	static
+../Core/Src/motorDriver.c:82:6:goForward	16	static
+../Core/Src/motorDriver.c:90:6:setOverallSpeed	40	static
+../Core/Src/motorDriver.c:97:6:gradualSetSpeed	32	static
+../Core/Src/motorDriver.c:101:6:takeOff	16	static
+../Core/Src/motorDriver.c:109:10:calculateMotorVelocities	128	static
+../Core/Src/motorDriver.c:138:6:Encoder_TRAIN	24	static

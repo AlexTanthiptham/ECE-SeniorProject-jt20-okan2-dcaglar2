@@ -1,0 +1,6 @@
+../Core/Src/test.c:11:6:TEST_BASIC_FOLLOW	32	static
+../Core/Src/test.c:30:6:Acceleration_TEST	32	static
+../Core/Src/test.c:49:6:Echo_TEST	16	static
+../Core/Src/test.c:56:6:PRINT_TEST	16	static
+../Core/Src/test.c:62:6:Parser_TEST	32	static
+../Core/Src/test.c:68:6:DATA_TEST	24	static

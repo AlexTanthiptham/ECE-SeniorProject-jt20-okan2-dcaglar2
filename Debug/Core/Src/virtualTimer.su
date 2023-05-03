@@ -1,0 +1,5 @@
+../Core/Src/virtualTimer.c:10:6:initVirtualTimer	32	static
+../Core/Src/virtualTimer.c:23:6:VirtualPWM_IT_Handler	16	static,ignoring_inline_asm
+../Core/Src/virtualTimer.c:47:6:setDutyCycle	16	static,ignoring_inline_asm
+../Core/Src/virtualTimer.c:53:6:gradualSetDutyCycle	40	static
+../Core/Src/virtualTimer.c:73:6:start_IT	16	static

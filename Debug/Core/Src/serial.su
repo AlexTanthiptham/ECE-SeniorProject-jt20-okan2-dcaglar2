@@ -1,0 +1,6 @@
+../Core/Src/serial.c:12:6:UARTPrintf	60	static
+../Core/Src/serial.c:23:6:UARTPrintln	20	static
+../Core/Src/serial.c:27:5:UARTScanln	32	static
+../Core/Src/serial.c:57:6:RPIParse	96	dynamic
+../Core/Src/serial.c:78:6:RPIClientInit	24	static
+../Core/Src/serial.c:84:5:recieveData	24	static
