@@ -4,6 +4,7 @@ import numpy as np
 import cv2
 from cache import CacheManager
 from time import time
+from pdb import set_trace
 CALIBRATION_DISTANCE = 1 #meter
 QR_CODE_REAL_WIDTH = 0.21#m
 KERNEL_SIZE=(17,17)
@@ -76,14 +77,16 @@ class Camera:
             # _,points = qrDecoder.detect(frame)
             # if QRCodeImg.all() != None:
             QRCodeImg,QRCodeDepthImg,points =self.searchForQRCode()
-            if points is not  None:
-                break
+            if points is None:
+                continue
             try:
+                set_trace()
                 referenceImgWidth =  QRCodeImg.shape[1]# in pixels
                 self.focalLength = (referenceImgWidth * CALIBRATION_DISTANCE) / QR_CODE_REAL_WIDTH
                 print("fl",self.focalLength)
                 self.cm.setFocalLength(self.focalLength)
                 print(QRCodeDepthImg)
+                self.kdc = 1
                 estimatedDist = self.CalculateVectorDistance(QRCodeDepthImg)
                 print("est-d:",estimatedDist)
                 self.kdc = CALIBRATION_DISTANCE/estimatedDist *100

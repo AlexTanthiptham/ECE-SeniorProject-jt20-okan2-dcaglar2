@@ -29,7 +29,9 @@ class SerialCOM:
         text= ""
         
         while True:
+            #start = time.time()
             data = self.arduino.read()
+            #print(f"internal read took : {time.time() - start}")
             # time.sleep(1)
             #print("got",data)
             if data ==b'' or data == NL:
