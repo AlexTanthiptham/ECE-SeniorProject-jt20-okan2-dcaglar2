@@ -22,3 +22,8 @@
     - When we account for the fact that we're gonna hook up our Raspberry Pi to our 5V regulators which is known to draw up to 2A of current, we would be generating approximately 26W of heat!
     - Due to these reasons we decided to change our regulators to be buck converters instead of linear regulators as buck converters have increased efficiency while delivering higher current loads.
 
+- We experienced setbacks due to our MCU and Raspberry Pi getting out of sync while communicating over UART. We hypothesized that this could be due to the XBox Kinect not being a real-time system and having no processing time guarantees.
+    - This meant that it was possible that the Kinect would cause the UART connections to go out of sync due to packets not being ready in 22:49
+    - We ended up fixing this by decreasing our baudrate from ~115200 to ~9600.
+    
+
