@@ -214,8 +214,28 @@ Date: Apr 24, 2023
 Date: Apr 25, 2023
 - Debugging PID hyperparameters
 - Assist in verifying hardware functionality during any debugging sessions that arose
-- Faciliated impromptu battery charging using lab power supplies
+- Purchased battery chargers incompatible with 6V battery, devised method to charge 6V SLA battery using lab power supplies
 
+Power Supply Voltage = (# of Cells) x (Cell Voltage Limit) = 6.9V
+Max Current =  (20%) x (Rated mAh Capacity) = 1A
+
+- Desulfated both batteries to ensure optimal charge storage
+
+# Entry 23
+Date: Apr 28, 2023
+- Worked on slides for mock presentation, performed mock presentation
+
+# Entry 24
+Date: May 1, 2023
+- Updated presentation slides to meet recommendations set out in mock presentation
+- Added additional block diagrams and photos to meet specifications
+- Debugged robot to try produce additional videos
+
+
+# Entry 23
+Date: May 3, 2023
+- Project presentation
+- Finalized report, finalizing updated block diagrams and taking additional photos. Submitted report
 
 # Attribution
 Format based on ECE445 Electronic Notebook guidelines and examples
